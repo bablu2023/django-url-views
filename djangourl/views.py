@@ -1,5 +1,14 @@
 #django http response
 from django.http import HttpResponse
+from django.shortcuts import render
+
+def homepage(request):
+    passdata = {
+        'title': 'home page',
+        'bodydata': 'This is the body data passed from views.py to index.html template file using context dictionary.'
+    }
+    return render(request, 'index.html', passdata)
+
 def home(request):
     return HttpResponse("Hello, Django home page!")
 
